@@ -1,0 +1,213 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=PT+Serif:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #fafafa;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  width: 90%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin: 11rem auto 10rem auto;
+  animation: opacity 1s;
+}
+
+.heading-primary {
+  font-family: "PT Serif";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 3.6rem;
+}
+
+.heading-secondary {
+  max-width: 38rem;
+}
+
+.heading-secondary--subheading {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+}
+
+.heading-secondary--description {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.8rem;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.box-item {
+  position: relative;
+  width: 75%;
+  max-width: 24rem;
+  animation-fill-mode: backwards;
+  animation-duration: 1s;
+  animation-delay: 0.2s;
+  transition: 0.2s;
+}
+
+.box-item:hover {
+  transform: translateY(-10px);
+}
+
+.box-item img {
+  width: 100%;
+}
+
+.box-item:nth-child(2),
+.box-item:nth-child(5) {
+  margin-top: 10rem;
+  justify-self: center;
+}
+
+.box-item:nth-child(3),
+.box-item:nth-child(6) {
+  justify-self: end;
+  animation-name: fromTheRight;
+}
+
+.box-item:nth-child(1),
+.box-item:nth-child(4) {
+  animation-name: fromTheLeft;
+}
+
+.box-item:nth-child(2),
+.box-item:nth-child(5) {
+  animation-name: fromTheBottom;
+}
+
+.name {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+
+.work-spec {
+  font-family: "PT Serif";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.2rem;
+  transform: rotate(90deg) translateX(50%);
+  text-transform: uppercase;
+  line-height: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 12rem;
+  margin-right: -7.5rem;
+}
+
+.footer {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.4rem;
+  text-align: center;
+
+  /* Not enough contrast ratio */
+  /* color: #a9a9a9; */
+  color: #767676;
+  padding: 12rem 0 2.4rem;
+}
+
+footer a:link,
+footer a:visited {
+  font-weight: 700;
+  color: inherit;
+}
+
+@media (max-width: 50rem) {
+  html {
+    font-size: 56.25%;
+  }
+  .header {
+    flex-direction: column;
+    max-width: 40rem;
+  }
+
+  .heading-primary {
+    margin-bottom: 4rem;
+  }
+
+  .main {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .box-item:nth-child(2),
+  .box-item:nth-child(4),
+  .box-item:nth-child(6) {
+    margin-top: 10rem;
+    justify-self: center;
+  }
+  .box-item,
+  .box-item:nth-child(3),
+  .box-item:nth-child(5) {
+    margin-top: 0;
+    justify-self: center;
+  }
+}
+
+@keyframes fromTheLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-15rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes fromTheRight {
+  0% {
+    opacity: 0;
+    transform: translateX(15rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes fromTheBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(15rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
